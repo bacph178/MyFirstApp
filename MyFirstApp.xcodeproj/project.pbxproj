@@ -397,6 +397,7 @@
 				3D74EB4919CD291D00FEFD3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D74EB4A19CD291D00FEFD3B /* Build configuration list for PBXNativeTarget "MyFirstAppTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +406,7 @@
 				3D74EB4C19CD291D00FEFD3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

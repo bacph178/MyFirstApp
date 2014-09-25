@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Social
 
 class ViewController: UIViewController {
                             
+    @IBOutlet weak var twitterWebview: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,7 +23,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleTweetButtonTapped(sender: UIButton) {
-        println("Ket noi thanh cong")
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+            let tweetVC = SLComposeViewController (forServiceType: SLServiceTypeTwitter)
+            tweetVC.setInitialText(
+            "I just finished the first project in ios 8 SDK Development. #prasios8")
+            self.presentViewController(tweetVC, animated: true, completion: nil)
+        } else {
+            println("Can't send tweet")
+        }
+    }
+    
+    @IBAction func handleShowMyTweetsTapped(sender: UIButton) {
+        let url = NSURL (string: "http://www.twitter.com/pragprog")
+        let urlRequest = NSURLRequest (URL: url)
+        self.twitterWebview.loadRequest(urlRequest)
     }
 }
 
